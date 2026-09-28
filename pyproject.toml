@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cow-culprit"
+version = "0.1.0"
+description = "Find and explain pandas Copy-on-Write read-only array bugs"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{name = "__AUTHOR__"}]
+keywords = ["pandas", "numpy", "copy-on-write", "linter", "ast"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Typing :: Typed",
+]
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "mypy>=1.11",
+    "pandas-stubs",
+]
+
+[project.urls]
+Repository = "https://github.com/__GH_OWNER__/cow-culprit"
+
+[project.scripts]
+cow-culprit = "cow_culprit.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cow_culprit"]
+
+[tool.mypy]
+strict = true
+exclude = ["tests/fixtures/"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
