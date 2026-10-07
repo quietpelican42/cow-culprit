@@ -9,7 +9,7 @@ description = "Find and explain pandas Copy-on-Write read-only array bugs"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
-authors = [{name = "__AUTHOR__"}]
+authors = [{name = "kofiadeyemiq"}]
 keywords = ["pandas", "numpy", "copy-on-write", "linter", "ast"]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -32,7 +32,7 @@ dev = [
 ]
 
 [project.urls]
-Repository = "https://github.com/__GH_OWNER__/cow-culprit"
+Repository = "https://github.com/quietpelican42/cow-culprit"
 
 [project.scripts]
 cow-culprit = "cow_culprit.cli:main"
